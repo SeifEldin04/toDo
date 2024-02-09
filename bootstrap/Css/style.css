@@ -1,32 +1,100 @@
-body {
-    background-color: beige;
-    width: 100%;
+/*start dark mode button */
+#toggleBtn {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    background-color: #333;
+    width: 50px;
+    height: 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+
+    transition: all 0.5s ease-in;
+}
+
+#toggleBtn::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
     position: absolute;
     top: 50%;
+    left: 2px;
     transform: translateY(-50%);
-    background-color: rgb(243, 238, 238);
+    transition: all 0.5s ease-in;
 }
 
-.colInfo {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+#toggleBtn:checked {
+    background: green;
 }
 
-#toDoInput::placeholder {
+#toggleBtn:checked::before {
+    background: #fff;
+    left: 29px;
+}
+
+/* end dark mode button */
+
+
+.dark-mode {
+    background-color: #111;
+    /* color: gainsboro; */
+}
+
+#taskContain {
+    box-shadow: 5px 5px 10px rgb(39, 38, 38);
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid gainsboro;
+    outline: none;
+    width: 100%;
+    font-weight: bolder;
+}
+
+#taskInp:focus,
+#filterTasks:focus {
+    transform: scale(1.020);
+    transition: transform 0.3s;
+}
+
+.inputBg {
+    background-color: #111;
+}
+
+.completed {
+    text-decoration: line-through;
     color: #d5d5d5;
 }
 
-.todos {
-    list-style: none;
+#myTable {
+    background-color: #04AA6D;
+    width: 100%;
+    color: white;
+    border-radius: 5px;
 }
 
-.todos li {
-    font-size: 1.5rem;
-    border-top: 1px solid #e5e5e5;
-    background-color: white;
+#myTable tr {
+    padding: 3px 10px;
+    border-bottom: 2px solid grey;
     cursor: pointer;
 }
 
-.completed{
-    text-decoration: line-through;
-    color: #d5d5d5;
+#sendTasks,
+#ubdateTasks {
+    background-color: #04AA6D;
+}
+
+#sendTasks:hover,
+#ubdateTasks:hover {
+    background-color: #01744a;
 }
