@@ -217,4 +217,3 @@ function applyTheme(theme) {
         toggleBtn.checked = false;
     }
 }
-
